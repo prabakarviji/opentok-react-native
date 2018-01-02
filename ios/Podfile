@@ -1,0 +1,20 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+
+target 'TokBot' do
+  node_modules_path = '../node_modules'
+
+  pod 'yoga', path: "#{node_modules_path}/react-native/ReactCommon/yoga/yoga.podspec"
+  pod 'React', path: "#{node_modules_path}/react-native"
+
+  pod 'RNOpenTok', path: "#{node_modules_path}/react-native-opentok/ios"
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == "React"
+      target.remove_from_project
+    end
+  end
+end
