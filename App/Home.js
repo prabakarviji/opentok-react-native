@@ -6,10 +6,14 @@ import {
   View,
   Image,
   Button,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
 
 
+import Styles from './Styles'
+import Icon from 'react-native-vector-icons/Ionicons';
+import FontIcon from 'react-native-vector-icons/FontAwesome';
 
 export default class Home extends Component<{}> {
 
@@ -19,23 +23,55 @@ export default class Home extends Component<{}> {
     super(props);
   }
 
+  static navigationOptions = {
+    header: ( /* Your custom header */
+    <View style={Styles.header}>
+      <View style={{flex:0.1,justifyContent:'center',alignItems:'center',paddingLeft:5,paddingTop:10}}>
+        <Icon
+          name="md-menu"
+          size={28} color="white" style={{ fontWeight: 'bold' }}
+        />
+      </View>
+      <View style={{flex:0.8,justifyContent:'center',alignItems:'center',paddingTop:5}}>
+        <Text style={Styles.locBtnText}> TOK-BOT </Text>
+      </View>
+
+    </View>
+  )
+  };
+
+
   render() {
     console.log(this)
     return (
-      <View style={styles.container}>
-        <View style={{flex:0.9,justifyContent:'center',alignItems:'center'}}>
-          <Text style={{fontWeight:'bold',fontSize:20}}> Demo app - TokBot</Text>
+      <View style={Styles.container}>
+        <View style={Styles.conBox}>
+          <Text style={Styles.mainText}> OpenTok </Text>
+          <Text style={Styles.mainText}> + </Text>
+          <Text style={Styles.mainText}>  React Native </Text>
         </View>
-        <View style={{flex:0.1,flexDirection:'row'}}>
-          <TouchableOpacity
-            style={{backgroundColor:'#27AE60',flex:0.5,margin:5,alignItems:'center',borderRadius:5,justifyContent:'center'}}
-            onPress={()=>this.publishAndView("Publish")}>
-            <Text style={{color:'white',fontSize:20,fontWeight:'bold'}}>Publish</Text>
+        <View style={Styles.eventContainer}>
+          <TouchableOpacity style={Styles.eventBox} onPress={()=>this.publishAndView('Publish')}>
+            <View style={{ flex: 0.2, alignItems: 'center',justifyContent:'center' }}>
+              <Icon
+                name="ios-videocam"
+                size={40} color="white" style={{ fontWeight: 'bold' }}
+              />
+            </View>
+            <View style={{flex:0.8,justifyContent:'center'}}>
+              <Text style={Styles.locBtnText}> Publish </Text>
+            </View>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={{backgroundColor:'#F1C40F',flex:0.5,margin:5,alignItems:'center',borderRadius:5,justifyContent:'center'}}
-            onPress={()=>this.publishAndView("Viewer")}>
-            <Text style={{color:'white',fontSize:20,fontWeight:'bold'}}>View</Text>
+          <TouchableOpacity style={Styles.eventBox} onPress={()=>this.publishAndView('View')}>
+            <View style={{ flex: 0.2, alignItems: 'center',justifyContent:'center' }}>
+              <Icon
+                name="ios-eye"
+                size={40} color="white" style={{ fontWeight: 'bold' }}
+              />
+            </View>
+            <View style={{flex:0.8,justifyContent:'center'}}>
+              <Text style={Styles.locBtnText}> View </Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>

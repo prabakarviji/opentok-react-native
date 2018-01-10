@@ -2,7 +2,10 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity,Dimensions } from "react-native";
 import OpenTok, { Publisher,Subscriber } from 'react-native-opentok';
+import Styles from './Styles'
 import type { Ref } from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
+import FontIcon from 'react-native-vector-icons/FontAwesome';
 var {height, width} = Dimensions.get('window');
 
 const sessionId = '';
@@ -25,6 +28,22 @@ export default class Publish extends Component<{}> {
     await OpenTok.connect(sessionId, token);
     OpenTok.on(OpenTok.events.ON_SIGNAL_RECEIVED, e => console.log(e));
   }
+  static navigationOptions = {
+    header: ( /* Your custom header */
+    <View style={Styles.header}>
+      <View style={{flex:0.1,justifyContent:'center',alignItems:'center',paddingLeft:5,paddingTop:10}}>
+        <Icon
+          name="md-menu"
+          size={28} color="white" style={{ fontWeight: 'bold' }}
+        />
+      </View>
+      <View style={{flex:0.8,justifyContent:'center',alignItems:'center',paddingTop:5}}>
+        <Text style={Styles.locBtnText}> Publisher </Text>
+      </View>
+
+    </View>
+  )
+  };
   ref: Ref<typeof Publisher>;
   render() {
     return (
