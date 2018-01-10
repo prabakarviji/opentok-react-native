@@ -24,20 +24,19 @@ export default class Home extends Component<{}> {
   }
 
   static navigationOptions = {
-    header: ( /* Your custom header */
-    <View style={Styles.header}>
-      <View style={{flex:0.1,justifyContent:'center',alignItems:'center',paddingLeft:5,paddingTop:10}}>
-        <Icon
-          name="md-menu"
-          size={28} color="white" style={{ fontWeight: 'bold' }}
-        />
+    header: (
+      <View style={Styles.header}>
+        <View style={{flex:0.1,justifyContent:'center',alignItems:'center',paddingLeft:5,paddingTop:10}}>
+          <Icon
+            name="md-menu"
+            size={28} color="white" style={{ fontWeight: 'bold' }}
+          />
+        </View>
+        <View style={{flex:0.8,justifyContent:'center',alignItems:'center',paddingTop:5}}>
+          <Text style={Styles.locBtnText}> TOK-BOT </Text>
+        </View>
       </View>
-      <View style={{flex:0.8,justifyContent:'center',alignItems:'center',paddingTop:5}}>
-        <Text style={Styles.locBtnText}> TOK-BOT </Text>
-      </View>
-
-    </View>
-  )
+    )
   };
 
 
