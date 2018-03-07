@@ -9,7 +9,7 @@ OpenTok is video platform tool from TokBox community to easily integrate high-qu
 OpenTok uses WebRTC technology for audio,video communications. OpenTok supports web,iOS,android and windows apps.
 
 <div style="display:flex;" >
-	<img style="margin-left:10px;" src="Image.png" width="100%" >
+	<img style="margin-left:10px;" src="opentok-rn.png" width="100%" >
 </div>
 
 
@@ -61,3 +61,4 @@ OpenTok uses WebRTC technology for audio,video communications. OpenTok supports 
     }}
 />
 ```
+Thanks to [CallStack community](https://github.com/callstack/react-native-opentok) for this wonderful React Native Open-Tok wrapper
