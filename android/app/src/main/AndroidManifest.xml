@@ -22,7 +22,7 @@
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
-      <meta-data android:name="OPENTOK_API_KEY" android:value="45782082" />
+      <meta-data android:name="OPENTOK_API_KEY" android:value="" />
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
