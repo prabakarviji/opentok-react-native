@@ -9,6 +9,8 @@ target 'TokBot' do
   pod 'React', path: "#{node_modules_path}/react-native"
 
   pod 'RNOpenTok', path: "#{node_modules_path}/react-native-opentok/ios"
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
 end
 
 post_install do |installer|

@@ -61,7 +61,7 @@ export default class Home extends Component<{}> {
               <Text style={Styles.locBtnText}> Publish </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={Styles.eventBox} onPress={()=>this.publishAndView('View')}>
+          <TouchableOpacity style={Styles.eventBox} onPress={()=>this.publishAndView('Viewer')}>
             <View style={{ flex: 0.2, alignItems: 'center',justifyContent:'center' }}>
               <Icon
                 name="ios-eye"
