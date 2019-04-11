@@ -7,7 +7,7 @@ import Viewer from "./App/Viewer";
 import Styles from './App/Styles'
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
-
+import {name as appName} from './app.json';
 
 import {
   Platform,
@@ -43,4 +43,4 @@ const SimpleApp = StackNavigator({
   }
 });
 
-AppRegistry.registerComponent("TokBot", () => SimpleApp);
+AppRegistry.registerComponent(appName, () => SimpleApp);
